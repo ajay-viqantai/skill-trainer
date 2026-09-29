@@ -1,0 +1,1125 @@
+{
+  "version": "7",
+  "skills": [
+    {
+      "id": "python",
+      "name": "Python",
+      "category": "programming_language",
+      "aliases": [
+        "Python3",
+        "Python 3",
+        "py"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "java",
+      "name": "Java",
+      "category": "programming_language",
+      "aliases": [
+        "Core Java",
+        "J2EE",
+        "Java EE"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "category": "programming_language",
+      "aliases": [
+        "ECMAScript",
+        "ES6",
+        "JS",
+        "JavaScript (ES6+)",
+        "Javascript"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "typescript",
+      "name": "TypeScript",
+      "category": "programming_language",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "c",
+      "name": "C",
+      "category": "programming_language",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "cpp",
+      "name": "C++",
+      "category": "programming_language",
+      "aliases": [
+        "CPP"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "csharp",
+      "name": "C#",
+      "category": "programming_language",
+      "aliases": [
+        "C Sharp",
+        "CSharp"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "go",
+      "name": "Go",
+      "category": "programming_language",
+      "aliases": [
+        "GOLANG",
+        "GoLang",
+        "Golang",
+        "golang"
+      ],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "rust",
+      "name": "Rust",
+      "category": "programming_language",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "r",
+      "name": "R",
+      "category": "programming_language",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "kotlin",
+      "name": "Kotlin",
+      "category": "programming_language",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "swift",
+      "name": "Swift",
+      "category": "programming_language",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "php",
+      "name": "PHP",
+      "category": "programming_language",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "ruby",
+      "name": "Ruby",
+      "category": "programming_language",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "scala",
+      "name": "Scala",
+      "category": "programming_language",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "dart",
+      "name": "Dart",
+      "category": "programming_language",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "sql",
+      "name": "SQL",
+      "category": "programming_language",
+      "aliases": [
+        "T-SQL",
+        "PL/SQL"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "bash",
+      "name": "Bash",
+      "category": "programming_language",
+      "aliases": [
+        "Shell scripting",
+        "Shell script"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "matlab",
+      "name": "MATLAB",
+      "category": "programming_language",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "html",
+      "name": "HTML",
+      "category": "programming_language",
+      "aliases": [
+        "HTML5"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "css",
+      "name": "CSS",
+      "category": "programming_language",
+      "aliases": [
+        "CSS3"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "react",
+      "name": "React",
+      "category": "framework",
+      "aliases": [
+        "React.js",
+        "ReactJS",
+        "React JS"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "react_native",
+      "name": "React Native",
+      "category": "framework",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "angular",
+      "name": "Angular",
+      "category": "framework",
+      "aliases": [
+        "AngularJS",
+        "Angular.js"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "vue",
+      "name": "Vue.js",
+      "category": "framework",
+      "aliases": [
+        "Vue",
+        "VueJS"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "nextjs",
+      "name": "Next.js",
+      "category": "framework",
+      "aliases": [
+        "NextJS",
+        "Next JS"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "nodejs",
+      "name": "Node.js",
+      "category": "framework",
+      "aliases": [
+        "Node",
+        "NodeJS",
+        "Node JS"
+      ],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "express",
+      "name": "Express.js",
+      "category": "framework",
+      "aliases": [
+        "Express",
+        "Express JS",
+        "ExpressJS"
+      ],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "django",
+      "name": "Django",
+      "category": "framework",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "flask",
+      "name": "Flask",
+      "category": "framework",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "fastapi",
+      "name": "FastAPI",
+      "category": "framework",
+      "aliases": [
+        "Fast API"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "spring",
+      "name": "Spring Boot",
+      "category": "framework",
+      "aliases": [
+        "Spring",
+        "SpringBoot"
+      ],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "dotnet",
+      "name": ".NET",
+      "category": "framework",
+      "aliases": [
+        "ASP.NET",
+        "dotnet",
+        ".NET Core"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "laravel",
+      "name": "Laravel",
+      "category": "framework",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "flutter",
+      "name": "Flutter",
+      "category": "framework",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "tailwind",
+      "name": "Tailwind CSS",
+      "category": "framework",
+      "aliases": [
+        "Tailwind",
+        "TailwindCSS"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "bootstrap",
+      "name": "Bootstrap",
+      "category": "framework",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "pandas",
+      "name": "Pandas",
+      "category": "library",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "numpy",
+      "name": "NumPy",
+      "category": "library",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "scikit_learn",
+      "name": "scikit-learn",
+      "category": "library",
+      "aliases": [
+        "sklearn",
+        "scikit learn"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "tensorflow",
+      "name": "TensorFlow",
+      "category": "library",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "pytorch",
+      "name": "PyTorch",
+      "category": "library",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "keras",
+      "name": "Keras",
+      "category": "library",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "redux",
+      "name": "Redux",
+      "category": "library",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "jquery",
+      "name": "jQuery",
+      "category": "library",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "mysql",
+      "name": "MySQL",
+      "category": "database",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgreSQL",
+      "category": "database",
+      "aliases": [
+        "Postgres",
+        "Postgre SQL",
+        "psql"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "mongodb",
+      "name": "MongoDB",
+      "category": "database",
+      "aliases": [
+        "Mongo",
+        "Mongo DB"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "redis",
+      "name": "Redis",
+      "category": "database",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "oracle_db",
+      "name": "Oracle",
+      "category": "database",
+      "aliases": [
+        "Oracle DB",
+        "Oracle Database"
+      ],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "sqlite",
+      "name": "SQLite",
+      "category": "database",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "sql_server",
+      "name": "SQL Server",
+      "category": "database",
+      "aliases": [
+        "MS SQL",
+        "MSSQL"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "firebase",
+      "name": "Firebase",
+      "category": "database",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "supabase",
+      "name": "Supabase",
+      "category": "database",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "elasticsearch",
+      "name": "Elasticsearch",
+      "category": "database",
+      "aliases": [
+        "Elastic Search"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "aws",
+      "name": "AWS",
+      "category": "cloud",
+      "aliases": [
+        "Amazon Web Services"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "azure",
+      "name": "Azure",
+      "category": "cloud",
+      "aliases": [
+        "Microsoft Azure"
+      ],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "gcp",
+      "name": "GCP",
+      "category": "cloud",
+      "aliases": [
+        "Google Cloud",
+        "Google Cloud Platform"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "docker",
+      "name": "Docker",
+      "category": "devops_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "kubernetes",
+      "name": "Kubernetes",
+      "category": "devops_tool",
+      "aliases": [
+        "K8s"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "category": "devops_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "category": "devops_tool",
+      "aliases": [
+        "Git-hub",
+        "Git hub"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "jenkins",
+      "name": "Jenkins",
+      "category": "devops_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "terraform",
+      "name": "Terraform",
+      "category": "devops_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "ansible",
+      "name": "Ansible",
+      "category": "devops_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "linux",
+      "name": "Linux",
+      "category": "devops_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "nginx",
+      "name": "Nginx",
+      "category": "devops_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "spark",
+      "name": "Apache Spark",
+      "category": "data_tool",
+      "aliases": [
+        "Spark",
+        "PySpark"
+      ],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "hadoop",
+      "name": "Hadoop",
+      "category": "data_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "hive",
+      "name": "Hive",
+      "category": "data_tool",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "kafka",
+      "name": "Kafka",
+      "category": "data_tool",
+      "aliases": [
+        "Apache Kafka"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "airflow",
+      "name": "Airflow",
+      "category": "data_tool",
+      "aliases": [
+        "Apache Airflow"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "power_bi",
+      "name": "Power BI",
+      "category": "data_tool",
+      "aliases": [
+        "PowerBI"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "tableau",
+      "name": "Tableau",
+      "category": "data_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "excel",
+      "name": "Excel",
+      "category": "data_tool",
+      "aliases": [
+        "MS Excel",
+        "Microsoft Excel",
+        "Advanced Excel"
+      ],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "jira",
+      "name": "Jira",
+      "category": "other_tool",
+      "aliases": [
+        "JIRA"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "postman",
+      "name": "Postman",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": false
+    },
+    {
+      "id": "figma",
+      "name": "Figma",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "selenium",
+      "name": "Selenium",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "rxjs",
+      "name": "RxJS",
+      "category": "library",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "angular_material",
+      "name": "Angular Material",
+      "category": "library",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "vs_code",
+      "name": "VS Code",
+      "category": "other_tool",
+      "aliases": [
+        "Visual Studio Code",
+        "VsCode",
+        "vscode"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "jasmine",
+      "name": "Jasmine",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "ngrx",
+      "name": "NgRx",
+      "category": "library",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "scss",
+      "name": "SCSS",
+      "category": "library",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "gitlab",
+      "name": "GitLab",
+      "category": "devops_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "karma",
+      "name": "Karma",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "grpc",
+      "name": "gRPC",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "grafana",
+      "name": "Grafana",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "swagger",
+      "name": "Swagger",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "jest",
+      "name": "Jest",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "prometheus",
+      "name": "Prometheus",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "rabbitmq",
+      "name": "RabbitMQ",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "jwt",
+      "name": "JWT",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "npm",
+      "name": "NPM",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "unit_testing",
+      "name": "Unit Testing",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "angular_cli",
+      "name": "Angular CLI",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "bitbucket",
+      "name": "Bitbucket",
+      "category": "devops_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "ionic",
+      "name": "Ionic",
+      "category": "framework",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "azure_devops",
+      "name": "Azure DevOps",
+      "category": "cloud",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "eclipse",
+      "name": "Eclipse",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "webpack",
+      "name": "Webpack",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "nestjs",
+      "name": "NestJS",
+      "category": "framework",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "storybook",
+      "name": "Storybook",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "sonarqube",
+      "name": "SonarQube",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "github_actions",
+      "name": "GitHub Actions",
+      "category": "devops_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "eslint",
+      "name": "ESLint",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "sass",
+      "name": "SASS",
+      "category": "library",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "ec2",
+      "name": "EC2",
+      "category": "cloud",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "new_relic",
+      "name": "New Relic",
+      "category": "other_tool",
+      "aliases": [
+        "NewRelic"
+      ],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "confluence",
+      "name": "Confluence",
+      "category": "devops_tool",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "chrome_devtools",
+      "name": "Chrome DevTools",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "hibernate",
+      "name": "Hibernate",
+      "category": "library",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "cypress",
+      "name": "Cypress",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "material_ui",
+      "name": "Material UI",
+      "category": "library",
+      "aliases": [
+        "Material-UI"
+      ],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "prettier",
+      "name": "Prettier",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "graphql",
+      "name": "GraphQL",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "clevertap",
+      "name": "CleverTap",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "visual_studio",
+      "name": "Visual Studio",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "datadog",
+      "name": "DataDog",
+      "category": "other_tool",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "cassandra",
+      "name": "Cassandra",
+      "category": "database",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "rest",
+      "name": "REST",
+      "category": "other_tool",
+      "aliases": [
+        "REST API",
+        "REST APIs",
+        "RESTFul",
+        "RESTful",
+        "RESTful API",
+        "RESTful APIs",
+        "Restful APIs"
+      ],
+      "ambiguous": true,
+      "case_sensitive": true
+    },
+    {
+      "id": "s3",
+      "name": "S3",
+      "category": "cloud",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    },
+    {
+      "id": "iam",
+      "name": "IAM",
+      "category": "cloud",
+      "aliases": [],
+      "ambiguous": false,
+      "case_sensitive": false
+    }
+  ]
+}

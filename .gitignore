@@ -1,0 +1,33 @@
+# ---------- Resume data: real people's personal information, never commit ----------
+data/
+
+# ---------- Generated outputs ----------
+artifacts/          # exported versions (v1, v2, ...): copy to the backend instead
+models/             # trained model, meta.json, training logs (models/logs/)
+
+# ---------- Debug / log files in the project root ----------
+debug_exp.txt
+debug_exp*.txt
+train_log.txt
+*.log
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# ---------- Virtual environments ----------
+.venv/
+venv/
+env/
+
+# ---------- Secrets / local settings ----------
+.env
+.env.*
+
+# ---------- Editors / OS ----------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

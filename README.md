@@ -1,0 +1,176 @@
+# skill-trainer
+
+Offline project that builds skill and experience extraction for the Resume Match app.
+It learns from your resumes and JDs and exports a small package (about 60 KB) that the
+backend loads. Nothing in this repo except `artifacts/<version>/` ever goes to production.
+
+```
+resumes (PDF/DOCX) -> text -> skills library finds skills -> experience parser finds jobs
+                   -> check with Qwen (offline) -> export artifacts/vN -> backend
+```
+
+**Currently shipping:** library-only mode (no trained model). Every library match counts as a
+skill, and experience comes from job dates. The LightGBM model is optional and can be added
+later without changing backend code.
+
+## Setup (once)
+
+```bash
+python -m venv .venv
+source .venv/Scripts/activate      # Git Bash on Windows
+pip install -r requirements.txt
+export PYTHONIOENCODING=utf-8      # avoids emoji errors when saving output to files
+```
+
+For the Qwen steps, install [Ollama](https://ollama.com), then:
+
+```bash
+ollama pull qwen2.5:7b-instruct
+```
+
+Ollama settings: turn **Cloud off**, keep "Expose to network" off, and set context length to **8k**.
+
+Put resumes and JDs (PDF and DOCX; subfolders are fine) in `data/raw/`.
+`data/` is in `.gitignore` because these are real people's resumes: never commit it.
+
+## Adding new resumes (the usual workflow)
+
+```bash
+# 1. Text and skills
+python scripts/01_extract_text.py
+python scripts/02_find_mentions.py
+
+# 2. Find technologies missing from the library (only new resumes go to Qwen)
+python scripts/07_discover_skills.py extract --docs 99999
+winpty python scripts/review_new_skills.py      # 1 = add, 2 = add (exact case), 0 = skip
+python scripts/07_discover_skills.py apply
+python scripts/02_find_mentions.py
+
+# 3. Experience
+python scripts/08_run_experience.py
+python scripts/09_check_experience_llm.py --docs 99999   # only new resumes go to Qwen
+
+# 4. Export a NEW version and test it
+python scripts/06_export.py --version 4 --library-only
+python check_text.py
+```
+
+Qwen steps cache their results, so re-running only processes new resumes.
+`--docs 99999` simply means "all resumes."
+
+## All scripts
+
+| Script                                      | What it does                                                                                 | Uses Qwen | Cached    |
+| ------------------------------------------- | -------------------------------------------------------------------------------------------- | --------- | --------- |
+| `01_extract_text.py`                        | PDF/DOCX to text. Check `data/manifest.csv` for scanned/broken files.                        | No        | No (fast) |
+| `02_find_mentions.py`                       | Finds every skill mention. Prints top skills and resumes with none.                          | No        | No (fast) |
+| `03_label_with_llm.py --docs N`             | Qwen labels mentions as real skill or not (for the optional model).                          | Yes       | Yes       |
+| `04_review.py sample / merge / check`       | Hand-check Qwen's labels; `check` compares new labels with your answers.                     | No        | -         |
+| `review_cli.py`                             | One-key-at-a-time tool for filling the review sample.                                        | No        | -         |
+| `05_train.py`                               | Trains decision tree + LightGBM, compares with library-only.                                 | No        | -         |
+| `06_export.py --version N [--library-only]` | Packages `artifacts/vN/` for the backend.                                                    | No        | -         |
+| `07_discover_skills.py extract / apply`     | Qwen lists technologies; unknown ones go to a CSV to review and add.                         | Yes       | Yes       |
+| `review_new_skills.py`                      | One-key-at-a-time tool for choosing which discovered skills to add.                          | No        | -         |
+| `08_run_experience.py`                      | Jobs, total years, years per skill for every resume.                                         | No        | No (fast) |
+| `09_check_experience_llm.py --docs N`       | Compares experience with Qwen's reading; ignores invented Qwen dates.                        | Yes       | Yes       |
+| `debug_experience.py <ids>`                 | Shows date lines and sections for resumes where experience looks wrong. Masks emails/phones. | No        | -         |
+| `try_extract.py`                            | Test an export from the command line.                                                        | No        | -         |
+| `check_text.py` (project root)              | Paste any text into `RAW_TEXT`, run, see skills + experience.                                | No        | -         |
+
+## Rules
+
+- Only edit files in `skillx/`, `scripts/`, and `library/`. Everything in `artifacts/` is
+  generated by `06_export.py`: never edit it by hand.
+- Never overwrite an exported version. Export a new number (v4, v5, ...) after every change,
+  so you always know which version produced which results.
+- Don't rename or move resumes already in `data/raw/`: the ID comes from the file path, so a
+  renamed file is treated as a new resume.
+- Deleting a resume from `data/raw/` doesn't delete its text: also remove `data/text/<id>.txt`
+  (find the ID in `data/manifest.csv`).
+- Changing `skillx/features.py` or the library means the optional model must be retrained
+  (steps 02 and 05) before exporting it. `--library-only` exports are not affected.
+
+## Skills library
+
+`library/skills_library.json` is the list of skills the system knows. Each entry:
+
+```json
+{
+  "id": "go",
+  "name": "Go",
+  "category": "programming_language",
+  "aliases": ["Golang", "golang"],
+  "ambiguous": true,
+  "case_sensitive": true
+}
+```
+
+- `aliases`: other spellings that mean the same skill (Golang, Postgres, ReactJS).
+- `ambiguous`: the name is also an everyday word (Go, Spark, Jest, Excel).
+- `case_sensitive`: match only the exact spelling. Use for short or ordinary-word names
+  (C, R, Go, REST, Gin, Jest) so normal sentences don't match.
+- Categories: programming_language, framework, library, database, cloud, devops_tool,
+  data_tool, other_tool.
+- Duplicates (two entries for one skill) should be merged: keep one name, move the other
+  spellings into its `aliases`.
+
+## Experience extraction
+
+For each resume: the jobs (header, start, end, current, internship flag), total experience with
+overlapping jobs merged, and per skill: years (from the jobs it appears in), `last_used`, and
+explicit claims like "5+ years of Python." Skills that appear only in a skills list get
+`years: null` ("listed only"), not a guess.
+
+Understood date formats: `Jan 2020`, `January, 2020`, `23 March 2017`, `Feb' 23`, `2018 Jan`,
+`03/2019`, `2020/12`, `2019` (year only, marked approximate), and
+`Present / Current / till / till date`. Misspelled months (Augest) and PDF dash glyphs work too.
+Handles two-column PDFs where jobs land under another heading.
+
+Checked against Qwen on 99 resumes: about 90% within one year, once Qwen's own mistakes
+(invented jobs, projects counted as jobs) are excluded.
+
+## Using it in the backend (FastAPI)
+
+Copy `artifacts/vN/` into the backend (for example `app/ml/skills_v3/`). Library-only
+versions need **no extra packages**; versions with `model.txt` need `lightgbm` and `numpy`.
+
+```python
+import sys
+sys.path.insert(0, "app/ml/skills_v3")
+from skillx.extractor import SkillExtractor
+
+extractor = SkillExtractor("app/ml/skills_v3")   # load once at startup
+
+result = extractor.analyze(resume_text)
+result["skills"]
+# [{"skill": "Python", "category": "programming_language", "mentions": 3,
+#   "evidence": "Languages: Python, Go", "years": 4.8, "last_used": "present",
+#   "explicit_years": 6.0, "roles": 2}, ...]
+result["experience"]
+# {"total_years": 7.3, "claimed_total_years": None, "job_count": 2,
+#  "jobs": [{"header": "Senior Engineer, Acme", "start": "2022-01", "end": None,
+#            "is_current": True, "months": 57, "skills": ["Go", "AWS"], ...}]}
+
+extractor.extract(text)                                  # skills only
+extractor.by_category(text, "programming_language")      # e.g. only languages
+```
+
+Run it once when a resume or JD is saved, store the results in the database, and answer
+questions (which languages, how many years of Go) from the database.
+
+## Project layout
+
+```
+skillx/           shared code (ships to the backend via export)
+  library.py        skills library + matcher
+  sections.py       resume section detection
+  features.py       mention features (used by the optional model)
+  experience.py     jobs, dates, years per skill
+  extractor.py      SkillExtractor: extract(), by_category(), analyze()
+scripts/          pipeline scripts (never ship)
+library/          skills_library.json
+check_text.py     paste text and see what gets extracted
+data/             resumes, text, labels, caches (gitignored)
+models/           trained model, if any
+artifacts/        exported versions for the backend
+```
